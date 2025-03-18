@@ -23,7 +23,7 @@ function broadcastGameState() {
 wss.on('connection', (ws) => {
   const id = uuidv4();
   const color = '#' + Math.floor(Math.random() * 16777215).toString(16); // Colore random
-  players[id] = { x: Math.random() * 800, y: Math.random() * 600, color };
+  players[id] = { x: Math.random() * 500, y: Math.random() * 600, color };
 
   ws.send(JSON.stringify({ id })); // Manda ID univoco al client
   broadcastGameState();
