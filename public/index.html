@@ -16,6 +16,8 @@
     let players = {};
     let myId = null;
     let isDragging = false;
+    let lastMoveTime = 0;
+    const MESSAGE_THROTTLE_MS = 50; // Max 20 messaggi/secondo
 
     const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
     const socket = new WebSocket(protocol + window.location.host);
@@ -74,6 +76,12 @@
 
     canvas.addEventListener('mousemove', (event) => {
       if (isDragging && myId && players[myId]) {
+        const now = Date.now();
+        if (now - lastMoveTime < MESSAGE_THROTTLE_MS) {
+          return;
+        }
+        lastMoveTime = now;
+        
         const rect = canvas.getBoundingClientRect();
         players[myId].x = event.clientX - rect.left;
         players[myId].y = event.clientY - rect.top;
@@ -102,6 +110,12 @@
     canvas.addEventListener('touchmove', (event) => {
       event.preventDefault();
       if (isDragging && myId && players[myId]) {
+        const now = Date.now();
+        if (now - lastMoveTime < MESSAGE_THROTTLE_MS) {
+          return;
+        }
+        lastMoveTime = now;
+        
         const { x, y } = getTouchPosition(event);
         players[myId].x = x;
         players[myId].y = y;
