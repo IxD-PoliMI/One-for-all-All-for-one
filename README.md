@@ -17,7 +17,7 @@ Un semplice gioco multiplayer basato su WebSocket in cui ogni dispositivo contro
 1. **Clona la repo**:
    ```bash
    git clone https://github.com/IxD-PoliMI/One-for-all-All-for-one.git
-   cd multiplayer-balls
+   cd One-for-all-All-for-one
    ```
 2. **Installa le dipendenze**:
    ```bash
@@ -28,6 +28,7 @@ Un semplice gioco multiplayer basato su WebSocket in cui ogni dispositivo contro
    npm start
    ```
 4. **Apri il gioco** nel browser su `http://localhost:3000` e gioca con più dispositivi!
+5. (opzionale) **Esponi la porta su internet**, ad esempio usando la [funzionalità di Port Forwarding di VSC](https://code.visualstudio.com/docs/debugtest/port-forwarding) e gioca con chi vuoi
 
 ---
 
@@ -46,7 +47,7 @@ A simple WebSocket-based multiplayer game in which each device controls a **colo
 1. **Clone the repo**:
 ```bash
 git clone https://github.com/IxD-PoliMI/One-for-all-All-for-one.git
-cd multiplayer-balls
+cd One-for-all-All-for-one
 ```
 2. **Install dependencies**:
 ```bash
@@ -56,4 +57,5 @@ npm install
 ```bash
 npm start
 ```
-4. **Open the game** in your browser at `http://localhost:3000` and play with multiple devices! 
+4. **Open the game** in your browser at `http://localhost:3000` and play with multiple devices!
+5. (Optional) **Expose the port to the internet**, for example by using the [VSC Port Forwarding feature](https://code.visualstudio.com/docs/debugtest/port-forwarding), and play with whoever you want.
